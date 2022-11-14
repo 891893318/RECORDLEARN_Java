@@ -40,5 +40,11 @@ public class MapTest {
      *     3．首次调用put()方法时，底层创建长度为16的数组
      *     4. jdk7底层结构只有:数组+链表。jdk8中底层结构:数组+链表+红黑树。
      *        当数组的某一个索引位置上的元素以链表形式存在的数据个数>8且当前数组的长度〉64时，此时此索引位置上的所有数据改为使用红黑树存储。
+     * <p>
+     *     DEFAULT_INITIAL_CAPACITY : HashMap的默认容量，16
+     *     DEFAULT_LOAD_FACTOR: HashMap的默认加载因子: 0.75I
+     *     threshold:扩容的临界值，=容量*填充因子:16 * 0.75 =>12
+     *     TREEIEY_ THRESHOLD: Bucket中链表长度大于该默认值，转化为红黑树:8
+     *     MIN_TREEIFY_CAPACITY:桶中的Node被树化时最小的hash表容量:64
      */
 }
