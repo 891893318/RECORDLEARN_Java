@@ -30,14 +30,14 @@ public class CopyFile {
         finally {
             //4.流的关闭
             try {
-                assert streamin != null;
-                streamin.close();
+                if (streamin != null)
+                    streamin.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
             try {
-                assert streamout != null;
-                streamout.close();
+                if (streamout != null)
+                    streamout.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -45,7 +45,6 @@ public class CopyFile {
     }
     @Test
     public void test(){
-        CopyFile copyFile = new CopyFile();
-        copyFile.copyFile("总结.md","D:\\picture");
+       copyFile("总结.md","D:\\新建文件夹\\总结1.md");
     }
 }
