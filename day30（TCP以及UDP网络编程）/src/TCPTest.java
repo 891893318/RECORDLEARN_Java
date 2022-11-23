@@ -31,7 +31,6 @@ public class TCPTest {
         try {
             s = new ServerSocket(1234);
             socket = s.accept();
-            socket.getInputStream();
             is = socket.getInputStream();
             //不建议
 //        byte[] num = new byte[20];
@@ -46,7 +45,7 @@ public class TCPTest {
             while ((len = is.read(num)) != -1) {
                 baos.write(num, 0, len);
             }
-            System.out.println(baos.toString());
+            System.out.println(baos);
 
         } catch (IOException e) {
             e.printStackTrace();
